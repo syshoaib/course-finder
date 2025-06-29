@@ -1,0 +1,13 @@
+<div class="course-search-layout">
+  <app-search-input (searchChange)="searchTerm.set($event)"></app-search-input>
+  <div class="main-content">
+    <app-filter-sidebar
+      (filtersChanged)="activeFilters.set($event)"
+    ></app-filter-sidebar>
+    <app-course-list
+      [courses]="filteredCourses()"
+      (viewDetails)="showDetails($event)"
+    ></app-course-list>
+  </div>
+</div>
+<ng-container #modalHost></ng-container>
