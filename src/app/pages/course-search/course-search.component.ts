@@ -124,7 +124,8 @@ export class CourseSearchComponent implements OnInit {
     const componentRef = this.modalHost.createComponent(
       CourseDetailModalComponent
     );
-    componentRef.instance.course = course;
+    const selectedCourse = course;
+    componentRef.setInput('course', selectedCourse);
     componentRef.location.nativeElement
       .querySelector('.close-btn')
       .addEventListener('click', () => this.modalHost.clear());

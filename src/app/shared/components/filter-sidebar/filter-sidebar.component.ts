@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { output } from '@angular/core';
 import { FilterState } from '../../../pages/course-search/course-search.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-filter-sidebar',
   standalone: true,
+  imports: [CommonModule, FormsModule],
   template: `
     <form class="filter-form">
       <h3>Authors</h3>

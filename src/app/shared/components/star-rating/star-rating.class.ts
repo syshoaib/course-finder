@@ -1,8 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, HostBinding } from '@angular/core';
 
 @Component({
-  selector: '.star-rating',
+  selector: 'star-rating',
   standalone: true,
+  imports: [CommonModule],
   template: `
     <span *ngFor="let star of stars; let i = index">
       <span [class.filled]="i < rating">&#9733;</span>

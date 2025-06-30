@@ -1,9 +1,11 @@
 import { Component, input } from '@angular/core';
 import { Course } from '../../../mock-course-data';
+import { StarRatingComponent } from '../star-rating/star-rating.class';
 
 @Component({
   selector: '[app-course-card]',
   standalone: true,
+  imports: [StarRatingComponent],
   template: `
     <div class="card">
       <img
@@ -18,7 +20,7 @@ import { Course } from '../../../mock-course-data';
       <div>{{ course().level }} | {{ course().language }}</div>
       <div>
         <span>{{ course().rating }}</span>
-        <span class="star-rating" [currentRating]="course().rating"></span>
+        <star-rating [currentRating]="course().rating"></star-rating>
       </div>
       <!-- Extra content slot -->
       <ng-content select="[extra-info]"></ng-content>
